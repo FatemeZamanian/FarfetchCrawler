@@ -13,9 +13,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 class Crawler:
     def __init__(self):
-        self.headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) '
-                        'AppleWebKit/537.36 (KHTML, like Gecko) '
-                        'Chrome/75.0.3770.80 Safari/537.36'}
+        self.headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) ' 'AppleWebKit/537.36 (KHTML, like Gecko) ' 'Chrome/75.0.3770.80 Safari/537.36'}
 
         self.opts = FirefoxOptions()
         self.opts.add_argument("--headless")
@@ -72,14 +70,14 @@ class Crawler:
 
         results = {
             "full-name": self.name,
-            "brand": self.brand.text,
+            # "brand": self.brand.text,
             "gender": self.gender,
             "price": self.price.text[1:],
             "short-description": self.desc.text,
             "Highlights": self.hs,
-            "Composition": self.Composition[:2],
-            "farfetch-id": self.Composition[2],
-            "brand-style-id": self.Composition[3]
+            # "Composition": self.Composition[:2],
+            # "farfetch-id": self.Composition[2],
+            # "brand-style-id": self.Composition[3]
         }
 
         obj = json.dumps(results, indent=4)
